@@ -28,7 +28,7 @@ const CreatePages = () => {
 
 
         if(isValidated){
-            const resp = await Axios.post('http://localhost:5000/createpagename', {name})
+            const resp = await Axios.post('http://amagpieinthesky:5000/createpagename', {name})
 
             if(resp.data.status === '200'){
                 console.log(resp.data)
