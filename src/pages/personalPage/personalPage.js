@@ -10,7 +10,7 @@ const PersonalPage = () => {
     const { id } = useParams();
 
     useEffect(async () => {
-        const getData = await Axios.post('http://amagpieinthesky.com:5000/getName', {name: id})
+        const getData = await Axios.post('https://amagpieinthesky.com:5000/getName', {name: id})
 
         console.log(getData.data)
 
@@ -23,10 +23,10 @@ const PersonalPage = () => {
     },[])
 
     const handleShareBtn = async() => {
-        const getData = await Axios.post('http://amagpieinthesky.com:5000/changestatus', {name: id})
+        const getData = await Axios.post('https://amagpieinthesky.com:5000/changestatus', {name: id})
         console.log(getData.data)
 
-        Axios.post('http://amagpieinthesky.com:5000/generatedynamiclink', {name: id})
+        Axios.post('https://amagpieinthesky.com:5000/generatedynamiclink', {name: id})
         .then((resp) => {
 
             if(resp.data.message !== 'error with the server'){
